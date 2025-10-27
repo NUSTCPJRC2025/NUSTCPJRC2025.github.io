@@ -1,0 +1,85 @@
+/* Define a professional color palette and font settings */
+:root {
+    --color-primary: #0f172a; /* Slate 900 - Dark Blue/Black */
+    --color-secondary: #1e40af; /* Blue 700 - Accent Blue */
+    --color-background: #f8fafc; /* Slate 50 - Off-White */
+    --color-card-bg: #ffffff;
+    --color-border: #e2e8f0; /* Slate 200 */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+}
+.container {
+    max-width: 1200px;
+}
+.header-section {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 4rem 1.5rem;
+    border-radius: 0.75rem 0.75rem 0 0;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.5);
+    margin-bottom: 2rem;
+}
+.card {
+    background-color: var(--color-card-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    margin-bottom: 3rem; /* Increased for better white space */
+    border: 1px solid var(--color-border);
+}
+
+/* Schedule Table Styling */
+.daily-schedule-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+.daily-schedule-table th, .daily-schedule-table td {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    border-right: none;
+    /* Ensure all content in td is normal weight */
+    font-weight: 400;
+}
+.daily-schedule-table th {
+    background-color: #e0e7ff; /* Indigo 100 */
+    color: var(--color-secondary);
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-secondary);
+}
+.daily-schedule-table td {
+    border-bottom: 1px solid var(--color-border);
+}
+.daily-schedule-table tr:last-child td {
+    border-bottom: none;
+}
+
+.day-highlight {
+    background-color: #f0f4ff; /* Lighter Indigo for day labels */
+    font-weight: 800;
+    color: var(--color-primary);
+}
+/* Specific rule to prevent bolding of any kind inside table cells */
+.daily-schedule-table td strong {
+     font-weight: inherit !important;
+}
+
+/* Accessibility: Focus styles */
+a:focus, button:focus {
+    outline: 2px solid #1e40af;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+    .daily-schedule-table {
+        font-size: 0.875rem;
+    }
+    .header-section {
+        padding: 2rem 1rem;
+    }
+}
