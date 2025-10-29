@@ -16,29 +16,30 @@ The course focuses on hands-on training in UAV remote sensing technology for dis
 - **Registration**: Direct link to Microsoft Forms for course registration
 - **Interactive Elements**:
   - Live countdown timer to event start
-  - Responsive design for mobile and desktop
+  - Responsive design for mobile and desktop with dedicated mobile layouts
   - Smooth scrolling and back-to-top functionality
+  - Mobile-optimized schedule with card-based layout
+- **Accessibility Features**: ARIA labels, keyboard navigation, semantic HTML
 - **Visual Assets**: Integrated images and logos for branding
 
 ## Technologies Used
 
-- **HTML5**: Semantic structure
-- **Tailwind CSS**: Utility-first styling framework
-- **Vanilla JavaScript**: Interactive features (countdown, smooth scrolling)
+- **HTML5**: Semantic structure with accessibility features
+- **Tailwind CSS**: Utility-first styling framework with custom responsive design
+- **Vanilla JavaScript**: Interactive features (countdown, smooth scrolling, navigation)
 - **GitHub Pages**: Hosting and deployment
 
 ## File Structure
 
 ```
 NUSTCPJRC2025.github.io/
-├── index.html              # Original webpage
-├── improved_index.html     # Upgraded version with enhancements
-├── styles.css              # External CSS styles
+├── index.html              # Main webpage with all enhancements
+├── styles.css              # External CSS styles with responsive design
 ├── script.js               # JavaScript functionality
 ├── README.md               # This file
 ├── audit_report.md         # Webpage audit and recommendations
-├── c1harlie-deets-71DA8.jpg  # Header banner image
-├── Climate-Adaptation-Drone-Application-Disaster-Response.jpg  # Course illustration
+├── c1harlie-deets-71DA8.jpg  # Header banner image (95% width)
+├── Climate-Adaptation-Drone-Application-Disaster-Response.jpg  # Course illustration (60% width)
 ├── Logo_left_v2.png        # Left logo
 ├── NUST_logo.png           # NUST logo
 └── .git/                   # Git repository
@@ -67,7 +68,7 @@ To run locally:
    cd NUSTCPJRC2025.github.io
    ```
 
-2. Open `improved_index.html` in your browser (or use a local server for better experience)
+2. Open `index.html` in your browser (or use a local server for better experience)
 
 ## Course Details
 
