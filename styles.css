@@ -30,13 +30,15 @@ body {
         padding: 4rem 1.5rem;
     }
 }
+/* Performance optimizations */
 .card {
     background-color: var(--color-card-bg);
     border-radius: 0.75rem;
     box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.05);
     padding: 2.5rem;
-    margin-bottom: 3rem; /* Increased for better white space */
+    margin-bottom: 3rem;
     border: 1px solid var(--color-border);
+    will-change: transform, opacity; /* Optimize for animations */
 }
 
 /* Mobile Schedule Cards */
@@ -226,6 +228,24 @@ a:hover, a:focus {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Icon List Styling */
+.icon-list-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+}
+
+.icon-list-item svg {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.icon-list-item span {
+    line-height: 1.4;
+}
+
 .lecturer-card {
     transition: all 0.3s ease;
 }
@@ -292,15 +312,15 @@ a:hover, a:focus {
     }
 }
 
-/* Smooth Reveal Animations */
+/* Optimized animations for better performance */
 .animate-in {
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: fadeInUp 0.4s ease-out forwards;
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -308,93 +328,87 @@ a:hover, a:focus {
     }
 }
 
-/* Stagger animations for multiple elements */
-.card:nth-child(1) { animation-delay: 0.1s; }
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.3s; }
-.card:nth-child(4) { animation-delay: 0.4s; }
+/* Reduce animation complexity for better performance */
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.2s; }
 
-/* Mobile Schedule Cards */
-@media (max-width: 1024px) {
-    .schedule-table-container {
-        display: none;
+/* Mobile Schedule Cards - Cleaner Design */
+@media (max-width: 767px) {
+    .schedule-day-card {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        color: #1e293b;
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e2e8f0;
+        transition: all 0.2s ease;
     }
-    .schedule-cards-container {
-        display: block;
+
+    .schedule-day-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     }
-}
 
-@media (min-width: 1024px) {
-    .schedule-table-container {
-        display: block;
+    .schedule-day-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 1.25rem;
+        text-align: left;
+        color: #1e293b;
+        border-bottom: 2px solid #cbd5e1;
+        padding-bottom: 0.75rem;
     }
-    .schedule-cards-container {
-        display: none;
+
+    .schedule-session-card {
+        background: white;
+        color: #374151;
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        border: 1px solid #f1f5f9;
+        border-left: 4px solid #3b82f6;
+        transition: all 0.2s ease;
     }
-}
 
-.schedule-cards-container {
-    display: none;
-}
+    .schedule-session-card:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-color: #60a5fa;
+    }
 
-.schedule-day-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .schedule-session-title {
+        font-weight: 600;
+        color: #1e40af;
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+    }
 
-.schedule-day-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-}
+    .schedule-session-content {
+        font-size: 0.875rem;
+        line-height: 1.6;
+        color: #475569;
+    }
 
-.schedule-day-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 0.5rem;
-}
+    .schedule-session-content ul {
+        margin-top: 0.75rem;
+        padding-left: 1.25rem;
+    }
 
-.schedule-session-card {
-    background: rgba(255, 255, 255, 0.95);
-    color: #1f2937;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #3b82f6;
-    transition: all 0.3s ease;
-}
+    .schedule-session-content li {
+        margin-bottom: 0.5rem;
+        padding-left: 0.25rem;
+    }
 
-.schedule-session-card:hover {
-    transform: translateX(5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.schedule-session-title {
-    font-weight: 600;
-    color: #1e40af;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
-
-.schedule-session-content {
-    font-size: 0.875rem;
-    line-height: 1.5;
-    color: #374151;
-}
-
-.schedule-session-content ul {
-    margin-top: 0.5rem;
-    padding-left: 1.5rem;
-}
-
-.schedule-session-content li {
-    margin-bottom: 0.25rem;
+    /* Remove hover effects on touch devices */
+    @media (hover: none) and (pointer: coarse) {
+        .schedule-day-card:hover,
+        .schedule-session-card:hover {
+            transform: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+    }
 }

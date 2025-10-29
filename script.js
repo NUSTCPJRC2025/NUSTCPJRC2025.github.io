@@ -53,29 +53,44 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Sticky Navigation
+// Optimized scroll event handling with throttling
+let scrollTimeout;
+function throttleScroll(callback, delay = 16) { // ~60fps
+    return function() {
+        if (!scrollTimeout) {
+            scrollTimeout = setTimeout(() => {
+                callback();
+                scrollTimeout = null;
+            }, delay);
+        }
+    };
+}
+
+// Sticky Navigation - Optimized
 const stickyNav = document.getElementById('sticky-nav');
 const header = document.querySelector('.header-section');
-let headerHeight = header.offsetHeight;
+let headerHeight = header ? header.offsetHeight : 300;
 
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > headerHeight) {
+const handleStickyNav = throttleScroll(() => {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollY > headerHeight) {
         stickyNav.classList.add('scrolled');
     } else {
         stickyNav.classList.remove('scrolled');
     }
 });
 
-// Active Navigation Link Highlighting
+// Active Navigation Link Highlighting - Optimized
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('#course-info, #payment, #schedule, #lecturers');
 
-function updateActiveLink() {
+const handleActiveLink = throttleScroll(() => {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
     let current = '';
 
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100; // Offset for sticky nav
-        if (window.pageYOffset >= sectionTop) {
+        const sectionTop = section.offsetTop - 120; // Offset for sticky nav
+        if (scrollY >= sectionTop) {
             current = section.getAttribute('id');
         }
     });
@@ -86,31 +101,38 @@ function updateActiveLink() {
             link.classList.add('active');
         }
     });
-}
+});
 
-window.addEventListener('scroll', updateActiveLink);
-updateActiveLink(); // Call once on page load
-
-// Back to Top Button
+// Back to Top Button - Optimized
 const backToTopBtn = document.createElement('button');
 backToTopBtn.innerHTML = '↑';
-backToTopBtn.className = 'fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300';
+backToTopBtn.className = 'fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 z-50';
 backToTopBtn.style.display = 'none';
+backToTopBtn.setAttribute('aria-label', 'Back to top');
 document.body.appendChild(backToTopBtn);
 
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
+const handleBackToTop = throttleScroll(() => {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollY > 300) {
         backToTopBtn.style.display = 'block';
-        setTimeout(() => backToTopBtn.classList.remove('opacity-0'), 10);
+        backToTopBtn.classList.remove('opacity-0');
     } else {
         backToTopBtn.classList.add('opacity-0');
-        setTimeout(() => backToTopBtn.style.display = 'none', 300);
+        setTimeout(() => {
+            if (window.pageYOffset <= 300) {
+                backToTopBtn.style.display = 'none';
+            }
+        }, 300);
     }
 });
 
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+// Use passive scroll listeners for better performance
+window.addEventListener('scroll', handleStickyNav, { passive: true });
+window.addEventListener('scroll', handleActiveLink, { passive: true });
+window.addEventListener('scroll', handleBackToTop, { passive: true });
+
+// Initialize on page load
+handleActiveLink();
 
 // Lazy Loading for Images
 const images = document.querySelectorAll('img[data-src]');
@@ -185,7 +207,7 @@ function announceToScreenReader(message, priority = 'polite') {
     }, 1000);
 }
 
-// Enhanced Interactivity
+// Optimized Intersection Observer for animations
 document.addEventListener('DOMContentLoaded', function() {
     // Add click tracking for important buttons
     const registerBtn = document.querySelector('a[href*="forms.office.com"]');
@@ -228,22 +250,26 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', createRipple);
     });
 
-    // Add smooth reveal animations
+    // Optimized smooth reveal animations with reduced observer frequency
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '50px 0px -50px 0px' // Trigger earlier and less frequently
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
+                // Unobserve after animation to improve performance
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe cards for animation
-    document.querySelectorAll('.card').forEach(card => {
-        observer.observe(card);
-    });
+    // Observe cards for animation with delay to avoid initial layout thrashing
+    setTimeout(() => {
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+    }, 100);
 });
