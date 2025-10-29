@@ -18,10 +18,17 @@ body {
 .header-section {
     background-color: var(--color-primary);
     color: white;
-    padding: 4rem 1.5rem;
+    padding: 2rem 1rem;
     border-radius: 0.75rem 0.75rem 0 0;
     box-shadow: 0 10px 20px rgba(15, 23, 42, 0.5);
     margin-bottom: 2rem;
+}
+
+/* Desktop header padding */
+@media (min-width: 768px) {
+    .header-section {
+        padding: 4rem 1.5rem;
+    }
 }
 .card {
     background-color: var(--color-card-bg);
@@ -30,6 +37,74 @@ body {
     padding: 2.5rem;
     margin-bottom: 3rem; /* Increased for better white space */
     border: 1px solid var(--color-border);
+}
+
+/* Mobile Schedule Cards */
+@media (max-width: 767px) {
+    .card {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Sticky Navigation */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.sticky-nav.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #1e40af;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Hero CTA Button Enhancements */
+.hero-cta-primary {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+}
+
+.hero-cta-primary:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.4);
+}
+
+.hero-cta-secondary {
+    border: 2px solid rgba(147, 197, 253, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-cta-secondary:hover {
+    background: rgba(147, 197, 253, 0.9);
+    border-color: rgb(147, 197, 253);
 }
 
 /* Schedule Table Styling */
@@ -70,8 +145,64 @@ body {
 }
 
 /* Accessibility: Focus styles */
-a:focus, button:focus {
-    outline: 2px solid #1e40af;
+a:focus, button:focus, input:focus, textarea:focus, select:focus {
+    outline: 3px solid #1e40af;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* High contrast focus for better visibility */
+.nav-link:focus {
+    outline: 3px solid #1e40af;
+    outline-offset: 2px;
+    background-color: rgba(30, 64, 175, 0.1);
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #1e40af;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Better color contrast for links */
+a {
+    color: #1e40af;
+}
+
+a:hover, a:focus {
+    color: #1d4ed8;
+}
+
+/* Ensure minimum touch targets */
+@media (pointer: coarse) {
+    .nav-link, button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
 }
 
 /* Mobile responsiveness improvements */
@@ -82,4 +213,188 @@ a:focus, button:focus {
     .header-section {
         padding: 2rem 1rem;
     }
+}
+
+/* Interactive Elements & Micro-interactions */
+.info-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.lecturer-card {
+    transition: all 0.3s ease;
+}
+
+.lecturer-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lecturer-card:hover .lecturer-number {
+    transform: scale(1.1);
+}
+
+/* Enhanced Button Interactions */
+.btn-enhanced {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-enhanced:hover::before {
+    left: 100%;
+}
+
+/* Pulse Animation for Important Elements */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.cta-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Ripple Effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Smooth Reveal Animations */
+.animate-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animations for multiple elements */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Mobile Schedule Cards */
+@media (max-width: 1024px) {
+    .schedule-table-container {
+        display: none;
+    }
+    .schedule-cards-container {
+        display: block;
+    }
+}
+
+@media (min-width: 1024px) {
+    .schedule-table-container {
+        display: block;
+    }
+    .schedule-cards-container {
+        display: none;
+    }
+}
+
+.schedule-cards-container {
+    display: none;
+}
+
+.schedule-day-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.schedule-day-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-day-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.schedule-session-card {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1f2937;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #3b82f6;
+    transition: all 0.3s ease;
+}
+
+.schedule-session-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.schedule-session-title {
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.schedule-session-content {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #374151;
+}
+
+.schedule-session-content ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.schedule-session-content li {
+    margin-bottom: 0.25rem;
 }

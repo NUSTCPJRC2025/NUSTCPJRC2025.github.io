@@ -5,15 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UAV Remote Sensing Training for Disaster Management | NUST CPJRC</title>
     <meta name="description" content="Join the 4-day UAV Remote Sensing Training Course at NUST. Learn theory and practice for disaster management. Register now for November 17-20, 2025.">
+    <meta name="keywords" content="UAV, drone, remote sensing, disaster management, NUST, training course, GIS">
+    <meta name="author" content="NUST CPJRC">
+    <link rel="canonical" href="https://nustcpjrc2025.github.io/">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body class="p-4 sm:p-8">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#course-info" class="skip-link">Skip to main content</a>
+
     <div class="container mx-auto">
         <!-- Header Section -->
         <header class="header-section text-center">
-            <div class="flex items-center justify-between mb-4">
+            <!-- Mobile: Stacked layout -->
+            <div class="block md:hidden">
+                <div class="flex justify-center items-center space-x-6 mb-4">
+                    <div class="bg-white p-1.5 rounded-full shadow-lg transition-transform duration-300 hover:scale-105">
+                        <img src="Logo_left_v2.png" alt="Left Logo" class="h-12 w-12 rounded-full object-cover" loading="lazy">
+                    </div>
+                    <div class="bg-white p-1.5 rounded-full shadow-lg transition-transform duration-300 hover:scale-105">
+                        <img src="NUST_logo.png" alt="NUST Logo" class="h-12 w-12 rounded-full object-cover" loading="lazy">
+                    </div>
+                </div>
+                <div class="px-4">
+                    <p class="text-lg font-medium uppercase tracking-wide text-blue-300 leading-tight">
+                        Jointly Organized by<br>
+                        <span class="text-base">China Pakistan Joint Research Center (CPJRC)</span><br>
+                        <span class="text-base">Institute of Geographical Information Systems (IGIS)</span><br>
+                        <span class="text-sm">School of Civil & Environmental Engineering (SCEE), NUST</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Desktop: Horizontal layout -->
+            <div class="hidden md:flex items-center justify-between mb-4">
                 <div class="bg-white p-2 rounded-full shadow-lg transition-transform duration-300 hover:scale-105">
                     <img src="Logo_left_v2.png" alt="Left Logo" class="h-20 w-20 rounded-full object-cover" loading="lazy">
                 </div>
@@ -30,35 +57,54 @@
             <h1 class="text-5xl sm:text-6xl font-extrabold mb-3">UAV Remote Sensing Training</h1>
             <h2 class="text-2xl sm:text-3xl font-light">Theory & Disaster Management Practice</h2>
             <p class="mt-4 text-gray-300 max-w-2xl mx-auto">Master the science of aerial data acquisition and application for critical decision support during emergencies.</p>
-            <img src="c1harlie-deets-71DA8.jpg" alt="UAV Remote Sensing Training Course Banner - Aerial view of disaster management operations" class="mt-6 mx-auto rounded-lg shadow-lg max-w-full h-auto" loading="lazy">
+
+            <!-- Hero CTA Button -->
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://forms.office.com/r/2FzquZWw0f" target="_blank" rel="noopener noreferrer"
+                   class="btn-enhanced inline-flex items-center px-8 py-4 text-lg font-bold text-white bg-red-600 rounded-lg shadow-lg hover:bg-red-700 transform hover:scale-105 transition-all duration-300 ease-in-out group cta-pulse">
+                    <span>Register Now</span>
+                    <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+                <a href="#course-info" class="btn-enhanced inline-flex items-center px-6 py-3 text-base font-semibold text-blue-300 border-2 border-blue-300 rounded-lg hover:bg-blue-300 hover:text-slate-900 transition-all duration-300 ease-in-out">
+                    Learn More
+                </a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400 text-center">Registration Link: <a href="https://forms.office.com/r/2FzquZWw0f" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-100 underline">https://forms.office.com/r/2FzquZWw0f</a></p>
+
+            <img src="c1harlie-deets-71DA8.jpg" alt="UAV Remote Sensing Training Course Banner - Aerial view of disaster management operations" class="mt-8 mx-auto rounded-lg shadow-lg w-19/20 h-auto" loading="lazy">
         </header>
 
-        <!-- General Information -->
-        <div class="card mt-[-2rem] relative z-10">
-            <h3 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-100 pb-3">I. Course Information</h3>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-lg items-center">
-                
-                <!-- Registration Link Box -->
-                <div class="p-4 bg-white rounded-lg border border-red-300 shadow-xl text-center md:col-span-1 order-last md:order-first">
-                    <p class="font-bold text-lg text-red-600 mb-2">Conference Registration</p>
-                    <a href="https://forms.office.com/r/2FzquZWw0f" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 text-base font-semibold text-white bg-red-600 rounded-lg shadow-md hover:bg-red-700 transition duration-300 ease-in-out">
-                        Click to Register
-                    </a>
-                    <p class="text-sm mt-2 text-gray-600 truncate">https://forms.office.com/r/2FzquZWw0f</p>
+        <!-- Sticky Navigation -->
+        <nav id="sticky-nav" class="sticky-nav bg-white shadow-lg border-b border-gray-200 z-50" role="navigation" aria-label="Main navigation">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-center space-x-1 md:space-x-8 py-3">
+                    <a href="#course-info" class="nav-link px-3 py-2 text-sm md:text-base font-medium text-gray-600 hover:text-blue-600 transition-colors duration-200 rounded-md hover:bg-blue-50" aria-label="Go to Course Information section">Course Info</a>
+                    <a href="#payment" class="nav-link px-3 py-2 text-sm md:text-base font-medium text-gray-600 hover:text-blue-600 transition-colors duration-200 rounded-md hover:bg-blue-50" aria-label="Go to Payment Information section">Payment</a>
+                    <a href="#schedule" class="nav-link px-3 py-2 text-sm md:text-base font-medium text-gray-600 hover:text-blue-600 transition-colors duration-200 rounded-md hover:bg-blue-50" aria-label="Go to Daily Schedule section">Schedule</a>
+                    <a href="#lecturers" class="nav-link px-3 py-2 text-sm md:text-base font-medium text-gray-600 hover:text-blue-600 transition-colors duration-200 rounded-md hover:bg-blue-50" aria-label="Go to Expert Lecturers section">Lecturers</a>
                 </div>
+            </div>
+        </nav>
+
+        <!-- General Information -->
+        <div id="course-info" class="card mt-[-2rem] relative z-10" role="region" aria-labelledby="course-info-heading">
+            <h3 id="course-info-heading" class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-100 pb-3">I. Course Information</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-lg items-center justify-items-center">
 
                 <!-- Duration & Dates -->
-                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <div class="info-card p-4 bg-gray-50 rounded-lg border border-gray-200">
                     <p class="font-bold text-lg text-red-600 mb-1">Duration & Dates:</p>
                     <p>4 Days, <strong>17–20 November 2025</strong></p>
                 </div>
                 <!-- Venue -->
-                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <div class="info-card p-4 bg-gray-50 rounded-lg border border-gray-200">
                     <p class="font-bold text-lg text-red-600 mb-1">Venue:</p>
                     <p> IGIS Building, NUST Sector H-12, Islamabad, 44000</p>
                 </div>
                 <!-- Target Audience -->
-                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <div class="info-card p-4 bg-gray-50 rounded-lg border border-gray-200">
                     <p class="font-bold text-lg text-red-600 mb-1">Target Audience:</p>
                     <p>Professionals working in Disaster Management, Researchers, Faculty</p>
                 </div>
@@ -66,14 +112,14 @@
 
             <!-- Featured Image for Disaster Response -->
             <div class="mt-6 text-center">
-                <img src="Climate-Adaptation-Drone-Application-Disaster-Response.jpg" alt="Climate Adaptation Drone Application for Disaster Response - UAV technology in action during emergency scenarios" class="mx-auto rounded-lg shadow-lg max-w-4xl h-auto" loading="lazy">
+                <img src="Climate-Adaptation-Drone-Application-Disaster-Response.jpg" alt="Climate Adaptation Drone Application for Disaster Response - UAV technology in action during emergency scenarios" class="mx-auto rounded-lg shadow-lg w-3/5 h-auto" loading="lazy">
                 <p class="text-sm text-gray-600 mt-2 italic">UAV Technology in Climate Adaptation and Disaster Response</p>
             </div>
 
             <!-- Countdown Timer -->
-            <div class="mt-6 text-center">
-                <p class="text-xl font-semibold text-gray-700">Event Starts In:</p>
-                <p id="countdown" class="text-2xl font-bold text-blue-600 mt-2"></p>
+            <div class="mt-6 text-center" role="region" aria-labelledby="countdown-heading" aria-live="polite">
+                <p id="countdown-heading" class="text-xl font-semibold text-gray-700">Event Starts In:</p>
+                <p id="countdown" class="text-2xl font-bold text-blue-600 mt-2" aria-label="Live countdown to event start"></p>
             </div>
 
             <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -92,13 +138,136 @@
                         </p>
                 </div>
             </div>
-        </div>            <!-- Daily Schedule Section -->
-            <section class="card">
-                <h3 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-100 pb-3">II. Daily Schedule & Curriculum</h3>
+        </div>
+
+            <!-- Payment Information -->
+            <div id="payment" class="card" role="region" aria-labelledby="payment-heading">
+                <h3 id="payment-heading" class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-100 pb-3">II. Payment Information</h3>
+                <div class="p-6 bg-green-50 rounded-lg border border-green-300">
+                    <p class="text-xl font-semibold text-green-800 mb-4">Bank Account Details for Course Fees/Donations</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base">
+                        <div>
+                            <p class="font-semibold text-green-700">Account Title:</p>
+                            <p class="text-green-900">IGIS Non-Development Fund Account</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-green-700">Bank/Branch:</p>
+                            <p class="text-green-900">HBL, H-12 NUST Branch, Islamabad</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-green-700">Branch Code:</p>
+                            <p class="text-green-900">2292</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-green-700">Account Number:</p>
+                            <p class="text-green-900">22927000142903</p>
+                        </div>
+                        <div class="md:col-span-2">
+                            <p class="font-semibold text-green-700">IBAN Number:</p>
+                            <p class="text-green-900">PK85HABB0022927000142903</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-green-700 mt-4 italic">Please ensure to mention "UAV Training Course Fee" in the transaction remarks for proper identification.</p>
+                </div>
+            </div>
+
+            <!-- Daily Schedule Section -->
+            <section id="schedule" class="card" role="region" aria-labelledby="schedule-heading">
+                <h3 id="schedule-heading" class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-100 pb-3">III. Daily Schedule & Curriculum</h3>
 
                 <p class="text-xl font-medium text-gray-700 mb-6">Daily Hours: <strong>9:00 AM – 12:00 PM</strong> (Morning) and <strong>2:00 PM – 5:00 PM</strong> (Afternoon)</p>
 
-                <div class="overflow-x-auto shadow-lg rounded-lg max-w-full">
+                <!-- Mobile Card View -->
+                <div class="block md:hidden space-y-6">
+                    <!-- Day 1 -->
+                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100">
+                        <h4 class="text-xl font-bold text-blue-800 mb-3">Day 1: Inauguration, Fundamentals, and Disaster Application Scenarios</h4>
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-md p-4 shadow-sm">
+                                <h5 class="font-semibold text-gray-800 mb-2">Registration and Opening Ceremony</h5>
+                                <p class="text-gray-600 text-sm">Welcome address and Inauguration of the Workshop</p>
+                            </div>
+                            <div class="bg-white rounded-md p-4 shadow-sm">
+                                <h5 class="font-semibold text-gray-800 mb-2">Basics of Unmanned Aerial Vehicles and Remote Sensing Principles and Practice</h5>
+                                <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                    <li>• Introduction to UAVs: Definition, development, and characteristics</li>
+                                    <li>• Remote Sensing Basics: Foundation of Photogrammetry</li>
+                                    <li>• Flight plans: survey area, sensors, overlap rate, resolution</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white rounded-md p-4 shadow-sm">
+                                <h5 class="font-semibold text-gray-800 mb-2">UAV Remote Sensing in Disaster Management</h5>
+                                <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                    <li>• Disaster Risk Assessment</li>
+                                    <li>• Disaster Monitoring and Early Warning</li>
+                                    <li>• Emergency Response and Loss Assessment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border border-green-100">
+                        <h4 class="text-xl font-bold text-green-800 mb-3">Day 2: Data Acquisition, Processing Theory, and Modeling</h4>
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-md p-4 shadow-sm">
+                                <h5 class="font-semibold text-gray-800 mb-2">Principles and Flight Planning of UAV Remote Sensing Data Acquisition</h5>
+                                <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                    <li>• UAV Remote Sensing Application: Sensors</li>
+                                    <li>• Imaging Principles: Optical, Spectral, LiDAR</li>
+                                    <li>• Pre-processing: geometric correction, radiometric calibration</li>
+                                    <li>• Flight planning: altitude, speed, route planning</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white rounded-md p-4 shadow-sm">
+                                <h5 class="font-semibold text-gray-800 mb-2">Data Processing for UAV Remote Sensing Applications</h5>
+                                <p class="text-gray-600 text-sm">Position and Attitude Data Processing, Rectification and 3D Data Processing, Oblique Photography Measurement Data Processing</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div class="bg-gradient-to-r from-purple-50 to-violet-50 rounded-lg p-6 border border-purple-100">
+                        <h4 class="text-xl font-bold text-purple-800 mb-3">Day 3: Hands-On Practice & Disaster Case Studies</h4>
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-md p-4 shadow-sm">
+                                <h5 class="font-semibold text-gray-800 mb-2">Practical Operations</h5>
+                                <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                    <li>• UAV Mission Flight: Basic operations, emergency procedures</li>
+                                    <li>• Data collection: orthophoto, oblique photography, thermal images</li>
+                                    <li>• Data pre-processing and analysis</li>
+                                    <li>• Rapid disaster loss assessment</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white rounded-md p-4 shadow-sm">
+                                <h5 class="font-semibold text-gray-800 mb-2">Applications and Case Studies</h5>
+                                <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                    <li>• Flood risk assessment of Attabad lake</li>
+                                    <li>• HEC-RAS 2D unsteady flow analysis of Shisper Lake</li>
+                                    <li>• Riverine flood assessment in Jhang district</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 4 -->
+                    <div class="bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg p-6 border border-orange-100">
+                        <h4 class="text-xl font-bold text-orange-800 mb-3">Day 4: Review, Communication, and Closing Ceremony</h4>
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-md p-4 shadow-sm">
+                                <h5 class="font-semibold text-gray-800 mb-2">Practice, Communication, and Summary</h5>
+                                <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                    <li>• Open Session: Communication among participants</li>
+                                    <li>• Questions and Answers</li>
+                                    <li>• Closing Ceremony: Summary and certificates</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Table View -->
+                <div class="hidden md:block schedule-table-container overflow-x-auto shadow-lg rounded-lg max-w-full">
                     <table class="daily-schedule-table w-full min-w-full">
                         <thead>
                             <tr class="text-sm uppercase tracking-wider">
@@ -195,15 +364,15 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </section>
 
             <!-- Lecturer Information -->
-            <div class="card">
-                <h3 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-100 pb-3">III. Expert Lecturers</h3>
+            <div id="lecturers" class="card" role="region" aria-labelledby="lecturers-heading">
+                <h3 id="lecturers-heading" class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-100 pb-3">IV. Expert Lecturers</h3>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-                    <div class="flex items-start space-x-4 p-5 bg-gray-50 rounded-xl border border-blue-100 transition duration-300 hover:shadow-md">
-                        <span class="text-4xl text-blue-600 font-extrabold flex-shrink-0">1</span>
+                    <div class="lecturer-card flex items-start space-x-4 p-5 bg-gray-50 rounded-xl border border-blue-100 transition duration-300 hover:shadow-md">
+                        <span class="lecturer-number text-4xl text-blue-600 font-extrabold flex-shrink-0">1</span>
                         <div>
                             <p class="font-bold text-xl text-blue-900">Dr. SHI Pilong</p>
                             <p class="text-sm text-gray-600 italic">Associate Professor, Aerospace Information Research Institute (CAS)</p>
@@ -211,8 +380,8 @@
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4 p-5 bg-gray-50 rounded-xl border border-blue-100 transition duration-300 hover:shadow-md">
-                        <span class="text-4xl text-blue-600 font-extrabold flex-shrink-0">2</span>
+                    <div class="lecturer-card flex items-start space-x-4 p-5 bg-gray-50 rounded-xl border border-blue-100 transition duration-300 hover:shadow-md">
+                        <span class="lecturer-number text-4xl text-blue-600 font-extrabold flex-shrink-0">2</span>
                         <div>
                             <p class="font-bold text-xl text-blue-900">Dr. LI Dong</p>
                             <p class="text-sm text-gray-600 italic">Senior Engineer, Aerospace Information Research Institute (CAS)</p>
@@ -220,8 +389,8 @@
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4 p-5 bg-gray-50 rounded-xl border border-blue-100 transition duration-300 hover:shadow-md">
-                        <span class="text-4xl text-blue-600 font-extrabold flex-shrink-0">3</span>
+                    <div class="lecturer-card flex items-start space-x-4 p-5 bg-gray-50 rounded-xl border border-blue-100 transition duration-300 hover:shadow-md">
+                        <span class="lecturer-number text-4xl text-blue-600 font-extrabold flex-shrink-0">3</span>
                         <div>
                             <p class="font-bold text-xl text-blue-900">Dr. Javed Iqbal</p>
                             <p class="text-sm text-gray-600 italic">Professor, IGIS, NUST</p>
@@ -229,8 +398,8 @@
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4 p-5 bg-gray-50 rounded-xl border border-blue-100 transition duration-300 hover:shadow-md">
-                        <span class="text-4xl text-blue-600 font-extrabold flex-shrink-0">4</span>
+                    <div class="lecturer-card flex items-start space-x-4 p-5 bg-gray-50 rounded-xl border border-blue-100 transition duration-300 hover:shadow-md">
+                        <span class="lecturer-number text-4xl text-blue-600 font-extrabold flex-shrink-0">4</span>
                         <div>
                             <p class="font-bold text-xl text-blue-900">Dr. Shahid Nawaz Khan</p>
                             <p class="text-sm text-gray-600 italic">Assistant Professor, IGIS, NUST</p>
@@ -238,8 +407,8 @@
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4 p-5 bg-gray-50 rounded-xl border border-blue-100 transition duration-300 hover:shadow-md">
-                        <span class="text-4xl text-blue-600 font-extrabold flex-shrink-0">5</span>
+                    <div class="lecturer-card flex items-start space-x-4 p-5 bg-gray-50 rounded-xl border border-blue-100 transition duration-300 hover:shadow-md">
+                        <span class="lecturer-number text-4xl text-blue-600 font-extrabold flex-shrink-0">5</span>
                         <div>
                             <p class="font-bold text-xl text-blue-900">Mr. Umer Safdar</p>
                             <p class="text-sm text-gray-600 italic">Lab Engineer, NUST</p>
@@ -249,41 +418,10 @@
                 </div>
             </div>
 
-            <!-- Payment Information -->
-            <div class="card">
-                <h3 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-100 pb-3">IV. Payment Information</h3>
-                <div class="p-6 bg-green-50 rounded-lg border border-green-300">
-                    <p class="text-xl font-semibold text-green-800 mb-4">Bank Account Details for Course Fees/Donations</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base">
-                        <div>
-                            <p class="font-semibold text-green-700">Account Title:</p>
-                            <p class="text-green-900">IGIS Non-Development Fund Account</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-green-700">Bank/Branch:</p>
-                            <p class="text-green-900">HBL, H-12 NUST Branch, Islamabad</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-green-700">Branch Code:</p>
-                            <p class="text-green-900">2292</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-green-700">Account Number:</p>
-                            <p class="text-green-900">22927000142903</p>
-                        </div>
-                        <div class="md:col-span-2">
-                            <p class="font-semibold text-green-700">IBAN Number:</p>
-                            <p class="text-green-900">PK85HABB0022927000142903</p>
-                        </div>
-                    </div>
-                    <p class="text-sm text-green-700 mt-4 italic">Please ensure to mention "UAV Training Course Fee" in the transaction remarks for proper identification.</p>
-                </div>
-            </div>
-
         <!-- Footer -->
-        <footer class="text-center py-8 text-gray-500 text-sm">
-            <p>Training Organized by CPJRC and IGIS, NUST, Islamabad, Pakistan. | Course Inquiries: <a href="mailto:NUST_CPJRC_WRKSHP_2025@igis.nust.edu.pk" class="text-gray-600 hover:text-blue-600 underline">NUST_CPJRC_WRKSHP_2025@igis.nust.edu.pk</a></p>
-            <p class="mt-2">&copy; 2025 UAV Remote Sensing Training Course. All Rights Reserved.</p>
+        <footer class="text-center py-8 text-gray-500 text-sm" role="contentinfo">
+            <p>Training Organized by <abbr title="China Pakistan Joint Research Center">CPJRC</abbr> and <abbr title="Institute of Geographical Information Systems">IGIS</abbr>, NUST, Islamabad, Pakistan. | Course Inquiries: <a href="mailto:NUST_CPJRC_WRKSHP_2025@igis.nust.edu.pk" class="text-gray-600 hover:text-blue-600 underline" aria-label="Email course organizers">NUST_CPJRC_WRKSHP_2025@igis.nust.edu.pk</a></p>
+            <p class="mt-2">&copy; <time datetime="2025">2025</time> UAV Remote Sensing Training Course. All Rights Reserved.</p>
         </footer>
     </div>
 </body>
